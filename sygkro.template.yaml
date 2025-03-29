@@ -1,0 +1,12 @@
+name: test-template
+description: A new template created by sygkro
+version: ""
+templating:
+  inputs:
+    author: Your Name
+    description: A new project created by sygkro
+    name: my-project
+    slug: my-project
+options:
+  skip_render:
+    - CONTRIBUTING.md
