@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/faradayfan/sygkro-test-template/compare/v1.0.0...v1.1.0) (2025-03-30)
+
+
+### Features
+
+* adding more boilerplate ([3d25f1c](https://github.com/faradayfan/sygkro-test-template/commit/3d25f1c68bd7efb3e0e8d6417654ef89292c20d7))
+
 ## 1.0.0 (2025-03-30)
 
 
