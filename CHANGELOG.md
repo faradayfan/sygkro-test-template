@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/faradayfan/sygkro-test-template/compare/v1.1.0...v1.1.1) (2025-03-30)
+
+
+### Bug Fixes
+
+* minor readme tweak ([8952609](https://github.com/faradayfan/sygkro-test-template/commit/89526094612a9c6befb529f3196ffe05d72cab0a))
+
 ## [1.1.0](https://github.com/faradayfan/sygkro-test-template/compare/v1.0.0...v1.1.0) (2025-03-30)
 
 
