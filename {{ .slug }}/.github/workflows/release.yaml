@@ -1,4 +1,5 @@
-name: Release Sygkro
+name: Release {{ .slug }}
+# {{/* no_render:start */}}
 on:
   push:
     branches:
@@ -14,9 +15,8 @@ jobs:
       contents: write
       pull-requests: write
     outputs:
-      release-created: ${{ steps.release.outputs.release_created }}
-      release-version: ${{ steps.release.outputs.version }}
-      tag-name: ${{ steps.release.outputs.tag_name }}
+      release_created: ${{ steps.release.outputs.release_created }}
+      release_version: ${{ steps.release.outputs.version }}
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
@@ -39,3 +39,23 @@ jobs:
           git tag -a v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }} -m "Release v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}"
           git push origin v${{ steps.release.outputs.major }}
           git push origin v${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}
+
+  deploy:
+    name: "Deploy"
+    runs-on: ubuntu-latest
+    needs: release
+    if: ${{ needs.release.outputs.release_created }}
+    permissions:
+      contents: read
+    env:
+      RELEASE_VERSION: ${{ needs.release.outputs.release_version }}
+      GIT_SHA: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/ci-setup.sh
+      - run: ./scripts/ci-pre-build.sh
+      - run: ./scripts/ci-build.sh
+      - run: ./scripts/ci-pre-deploy.sh
+      - run: ./scripts/ci-deploy.sh
+      - run: ./scripts/ci-post-deploy.sh
+# {{/* no_render:end */}}

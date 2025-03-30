@@ -1,0 +1,21 @@
+name: "Validate {{ .slug }}"
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions: {}
+
+# {{/* no_render:start */}}
+jobs:
+  validate:
+    name: "Validate"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/ci-setup.sh
+      - run: ./scripts/ci-pre-build.sh
+      - run: ./scripts/ci-build.sh
+# {{/* no_render:end */}}
