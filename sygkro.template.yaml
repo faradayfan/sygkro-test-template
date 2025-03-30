@@ -9,4 +9,4 @@ templating:
     slug: my-project
 options:
   skip_render:
-    - CONTRIBUTING.md
+    - .github/workflows/**
