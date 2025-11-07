@@ -7,7 +7,9 @@ import subprocess
 def get_current_branch():
     """Retrieve the current Git branch name."""
     try:
-        branch = subprocess.check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], encoding="utf-8").strip()
+        branch = subprocess.check_output(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"], encoding="utf-8"
+        ).strip()
         return branch
     except subprocess.CalledProcessError:
         sys.stderr.write("Error: Could not determine the current branch.\n")
@@ -32,7 +34,9 @@ def main():
         print(f"Branch '{branch_name}' is valid for trunk based development.")
         sys.exit(0)
     else:
-        sys.stderr.write(f"Error: Branch name '{branch_name}' does not conform to the required naming convention.\n")
+        sys.stderr.write(
+            f"Error: Branch name '{branch_name}' does not conform to the required naming convention.\n"
+        )
         sys.stderr.write("Valid branch names are:\n")
         sys.stderr.write("  - Trunk branches: main, master, or trunk\n")
         sys.stderr.write("  - Bugfix branches: bugfix/description\n")

@@ -17,9 +17,9 @@ def main():
         sys.exit(1)
 
     # Regular expression for Conventional Commits:
-    # Matches a commit message that starts with a valid type (feat, fix, docs, etc.),
-    # an optional scope in parentheses, an optional exclamation mark for breaking changes,
-    # a colon, a space, and then the description.
+    # Matches a commit message that starts with a valid type (feat, fix, docs, etc)
+    # an optional scope in parentheses, an optional exclamation mark for
+    # breaking changes, a colon, a space, and then the description.
     pattern = r"^(feat|fix|docs|style|refactor|perf|test|chore|ci|build)(\([\w\-.]+\))?(!)?: .+"
     if not re.match(pattern, commit_message):
         sys.stderr.write("\n✖  Invalid commit message format.\n\n")
