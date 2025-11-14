@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/faradayfan/sygkro-test-template/compare/v1.1.1...v1.1.2) (2025-11-14)
+
+
+### Bug Fixes
+
+* removing files from skip_render ([ca4f5ad](https://github.com/faradayfan/sygkro-test-template/commit/ca4f5ad237fac01b6559cd7790921c9e2c58d07f))
+
 ## [1.1.1](https://github.com/faradayfan/sygkro-test-template/compare/v1.1.0...v1.1.1) (2025-03-30)
 
 
