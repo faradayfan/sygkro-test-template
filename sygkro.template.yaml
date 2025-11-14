@@ -8,5 +8,4 @@ templating:
     name: my-project
     slug: my-project
 options:
-  skip_render:
-    - .github/workflows/**
+  skip_render: []
